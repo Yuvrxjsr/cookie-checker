@@ -1,0 +1,195 @@
+@charset "utf-8";
+
+/*-----------Basic Reset---------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border-style: none;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    font: inherit;   
+}
+
+body {
+    font-family: "Lato", "Open Sans", Arial, sans-serif;
+    background-color: rgb(25, 23, 32);
+}
+
+.container {
+    width: min(100% - 30px, 1200px);
+    margin-inline: auto;
+    height: 100%;
+}
+
+.background-blur {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    width: 100%;
+    backdrop-filter: blur(4px);
+}
+
+main {
+    height: 100dvh;
+    display: grid;
+    place-items: center;
+}
+
+main p {
+    color: #f0f8ff;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+}
+
+main p span:first-child {
+    color: #663399;
+    text-decoration: underline dotted;
+}
+
+main p span:nth-child(2) {
+    color: #ff8c00;
+    text-decoration: underline dotted;
+}
+
+main p span:last-child {
+    color: #1e90ff;
+    text-decoration: underline dotted;
+}
+
+.dialog-box, .settings-box {
+    background-color: #f0f8ff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 280px;
+    padding: 20px 15px;
+    border-radius: 5px;
+}
+
+.dialog-box {
+    display: none;
+}
+
+.settings-box {
+    display: none;
+}
+
+.dialog-box h2, .settings-box h2 {
+    font-size: 26px;
+    color: #000;
+    margin-bottom: 25px;
+}
+
+.accept-button, .settings-button {
+    margin: 40px 5px 0 0;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 12px;
+    transition: all 0.30s ease-in-out;
+    cursor: pointer;
+}
+
+.accept-button {
+    background-color: #ff8c00;
+    color: #f0f8ff;
+}
+
+.accept-button:hover {
+    color: #000;
+}
+
+.settings-button {
+    color: #ff8c00;
+}
+
+.settings-box div p {
+    width: 80%;
+}
+
+.settings-box div {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.save-button {
+    margin-top: 15px;
+    cursor: pointer;
+    background-color: #ff8c00;
+    color: #f0f8ff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 12px;
+    transition: all 0.30s ease-in-out;
+}
+
+.save-button:hover {
+    color: #000;
+}
+
+.switch {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    width: 56px;
+    height: 30px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #ff8c00;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #ff8c00;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
